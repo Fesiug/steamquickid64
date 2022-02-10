@@ -1,0 +1,5 @@
+#!/bin/sh
+
+query=$(printf '%s' "$*")
+id64dec=$(curl -s https://www.steamidfinder.com/lookup/$query/ | grep -Eo "\(Dec\): [0-9</code>]*" | grep -Eo "*[0-9]*")
+echo $id64dec
